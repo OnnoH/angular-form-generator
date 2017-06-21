@@ -49,6 +49,9 @@ The form configuration is a json object that consists of required and optional p
   ]
 }
 ```
+
+[The full form configuration documentation.](FORMCONFIG.md)
+
 ### FormConfig
 The formConfig object is the root of a form configuration. It contains the genaral information of a formConfig.
 
