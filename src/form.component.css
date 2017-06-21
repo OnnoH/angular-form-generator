@@ -1,0 +1,9 @@
+.groupTitle{
+    margin-bottom: 0px;
+    color: #2d3291;
+    position: relative;
+    border-bottom: #2d3291 solid 1px;
+}
+.groupTitleRow{
+    padding-bottom: 0px!important;
+}

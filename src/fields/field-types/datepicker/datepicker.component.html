@@ -1,0 +1,6 @@
+<div *ngIf="field.visible" class="field">
+    <material-datepicker (focus)="onFocus()" (blur)="onBlur()" [rangeStart]="field.minDate" [rangeEnd]="field.maxDate" [dateFormat]="'DD-MM-YYYY'" [isRequired]="field.isRequired" [disabled]="readonly" [date]="date" [placeholder]="field.placeholder" (dateChange)="transformDate($event)"></material-datepicker>
+    <div *ngIf="control.value">
+    <a class="pointer material-icons md-48 color-error-red" (click)="clearField()" mdTooltip="Clear" [mdTooltipPosition]="'right'">close</a>
+  </div>
+</div>

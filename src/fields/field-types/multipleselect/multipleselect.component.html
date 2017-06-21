@@ -1,0 +1,5 @@
+<md-select multiple placeholder="{{field.placeholder}}" (focus)="onFocus()" [formControl]="control" [required]="field.isRequired" style="width: 100%;">
+  <md-option *ngFor="let option of options" [value]="option.key">
+    {{option.value}}
+  </md-option>
+</md-select>

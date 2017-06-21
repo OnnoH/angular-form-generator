@@ -1,0 +1,48 @@
+<div class="ui negative message" *ngIf="formInvalid">
+    <i class="close icon"></i>
+    <div class="header">
+        Niet alle velden zijn op de juiste manier ingevuld
+    </div>
+    <li *ngFor="let error of errors">{{error}}</li>
+</div>
+  <form [formGroup]="form" class="ui">
+      <div class="ui stackable grid">
+          <ng-container *ngFor="let group of page.groups | groupCheck: data"><!--class="row"-->
+            <ng-container *ngIf="!group.isHidden">
+              <div *ngIf="group.title" class="sixteen wide column groupTitleRow">
+                  <h3 class="groupTitle">{{group.title}}</h3>
+              </div>
+              <div *ngIf="group.table; else noTable" style="width:100%;">
+                <div class="row">
+                  <table style="width:100%;">
+                    <tr *ngIf="group.table.headers">
+                      <th style="text-align: left;" *ngFor="let header of group.table.headers">{{header.text}}</th>
+                    </tr>
+                    <tr *ngFor="let tableRow of (group | rowGen)">
+                      <td *ngFor="let field of tableRow">
+                        <form-field [field]="field" [form]="form" (buttonClicked)="onClick($event)"></form-field>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <ng-template #noTable>
+                <ng-container *ngIf="group.orientation === 0; else hor">
+                  <div class="row" *ngFor="let field of group.fields">
+                    <div [ngClass]="field.class">
+                      <form-field [field]="field" [form]="form" (buttonClicked)="onClick($event)"></form-field>
+                    </div>
+                  </div>
+                </ng-container>
+                <ng-template #hor>
+                  <div class="row">
+                    <div *ngFor="let field of group.fields" [ngClass]="field.class">
+                      <form-field [field]="field" [form]="form" (buttonClicked)="onClick($event)"></form-field>
+                    </div>
+                  </div>
+                </ng-template>
+              </ng-template>
+            </ng-container>
+          </ng-container>
+    </div>
+  </form>

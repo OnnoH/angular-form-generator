@@ -1,0 +1,16 @@
+.field:hover div .color-error-red{
+    display: block;
+}
+
+.field .color-error-red, .field .color-error-red:hover{
+    display: none;
+    color:#F05A41;
+    background-color: #fff;
+    position: absolute;
+    right: -8px;
+    top: 10px;
+}
+
+.field .pointer{
+    cursor: pointer;
+}

@@ -1,0 +1,4 @@
+<label>{{field.placeholder}}</label>
+<md-radio-group [formControl]="control" [required]="field.isRequired" style="width: 100%;">
+  <md-radio-button *ngFor="let option of options" [value]="option.key">{{option.value}}</md-radio-button>
+</md-radio-group>

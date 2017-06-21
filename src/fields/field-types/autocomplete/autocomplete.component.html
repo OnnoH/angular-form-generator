@@ -1,0 +1,14 @@
+<div *ngIf="field.visible" class="field">
+  <md-input-container dividerColor="{{ control.hasError('required') && control.touched ? 'warn' : 'primary'}}" style="width: 100%;">
+    <input mdInput type="{{ field.type }}" placeholder="{{ field.placeholder }}{{field.isRequired ? '*' : ''}}" [formControl]="control" (focus)="onFocus()" (blur)="onBlur()" [mdAutocomplete]="auto">
+    <md-hint align="start" *ngIf="control.hasError('required') && control.touched" style="color:red;">{{field.errorMessage}}</md-hint>
+  </md-input-container>
+  <div *ngIf="control.value">
+    <a class="pointer material-icons md-48 color-error-red" (click)="clearField()" mdTooltip="Clear" [mdTooltipPosition]="'right'">close</a>
+  </div>
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let option of filteredOptions | async" [value]="option.key">
+        {{ option.value }}
+    </md-option>
+  </md-autocomplete>
+</div>

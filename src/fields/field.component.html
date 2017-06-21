@@ -1,0 +1,13 @@
+<div [ngSwitch]='field.type | formtype'>
+  <div *ngSwitchCase="'textfield'"><form-textfield [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-textfield></div>
+  <div *ngSwitchCase="'date'"><form-datepicker [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-datepicker></div>
+  <div *ngSwitchCase="'radio'"><form-radiobutton [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-radiobutton></div>
+  <div *ngSwitchCase="'select'"><form-select [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-select></div>
+  <div *ngSwitchCase="'autocomplete'"><form-autocomplete [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-autocomplete></div>
+  <div *ngSwitchCase="'multiselect'"><form-multiselect [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-multiselect></div>
+  <div *ngSwitchCase="'check'"><form-check [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-check></div>
+  <div *ngSwitchCase="'button'"><form-button [buttonField]="field" (clicked)="onClick($event)"></form-button></div>
+  <div *ngSwitchCase="'label'"><form-label [field]="field"></form-label></div>
+  <div *ngSwitchDefault>{{field.type}}</div>
+</div>
+

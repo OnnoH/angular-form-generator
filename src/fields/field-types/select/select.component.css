@@ -1,0 +1,27 @@
+.select-material-design .mat-select-trigger{
+  font-size:14px;
+  height:26px;
+}
+
+.select-material-design .mat-select-placeholder.mat-floating-placeholder{
+  top:-14px!important;
+  /*overflow: visible;*/
+  text-overflow: ellipsis;
+}
+
+.select-material-design .mat-select-placeholder{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*.select-material-design .mat-select-arrow{
+    position: absolute;
+    right: 0px;
+    background-color: white;
+}*/
+
+.mat-select-panel{
+  max-width: 100% !important;
+}
+

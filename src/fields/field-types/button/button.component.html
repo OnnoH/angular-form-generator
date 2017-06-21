@@ -1,0 +1,2 @@
+<button *ngIf="buttonField.type == 'reset'" md-button type="{{type}}">{{buttonField.placeholder}}</button>
+<button *ngIf="buttonField.type != 'reset'" md-raised-button type="{{type}}" color="primary" (click)="btnClicked()">{{buttonField.placeholder}}</button>
