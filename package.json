@@ -13,6 +13,7 @@
     "@angular/common": "^4.2.3",
     "@angular/core": "^4.2.3",
     "@angular/forms": "^4.2.3",
+    "@angular/platform-browser": "^4.2.3",
     "hammerjs": "^2.0.8",
     "semantica-material-datepicker": "^1.0.1"
   }

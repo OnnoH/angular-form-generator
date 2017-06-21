@@ -19,6 +19,8 @@ import { FormPipesModule } from "./pipes/form-pipes.module";
 import { AutocompleteComponent } from './fields/field-types/autocomplete/autocomplete.component';
 import { FormModifier } from "./form.modifier";
 
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+
 import 'HammerJS';
 
 @NgModule({
@@ -28,7 +30,8 @@ import 'HammerJS';
     MaterialModule,
     ReactiveFormsModule,
     DatepickerModule,
-    FormPipesModule
+    FormPipesModule,
+    NoopAnimationsModule
   ],
   declarations: [
     TextfieldComponent,
