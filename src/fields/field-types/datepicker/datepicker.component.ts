@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { AbstractControl } from "@angular/forms";
-import { Field } from "app/form/form.model";
+import { Field } from "../../../form.model";
 
 import * as moment from 'moment';
 import { Observable } from "rxjs/Observable";
-import { FormService } from "app/form/form.service";
+import { FormService } from "../../../form.service";
 
 @Component({
   selector: 'form-datepicker',

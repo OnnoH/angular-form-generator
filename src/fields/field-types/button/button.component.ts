@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Field } from "app/form/form.model";
+import { Field } from "../../../form.model";
 
 @Component({
   selector: 'form-button',

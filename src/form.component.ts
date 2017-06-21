@@ -2,10 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@
 import { FormGroup, FormBuilder, FormControl, Validators, ValidatorFn } from "@angular/forms";
 
 import "rxjs/add/operator/map";
-import { Page, Field, Group } from "app/form/form.model";
+import { Page, Field, Group } from "./form.model";
 import { FormService } from "./form.service";
-import { maxValueValidator, minValueValidator, emptyValidator } from "app/form/custom-validators/validators";
-import { GroupCheckPipe } from "app/form/pipes/group-check.pipe";
+import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-validators/validators";
+import { GroupCheckPipe } from "./pipes/group-check.pipe";
 
 @Component({
   selector: "ETP-form",

@@ -3,12 +3,12 @@ import { Subject } from "rxjs/Subject";
 
 import 'rxjs/add/operator/map';
 import { Observable } from "rxjs/Observable";
-import { Field } from "app/form/form.model";
+import { Field } from "./form.model";
 import { AbstractControl, Validators, FormControl } from "@angular/forms";
-import { maxValueValidator, minValueValidator, emptyValidator } from "app/form/custom-validators/validators";
+import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-validators/validators";
 
 import * as moment from "moment";
-import { FormModifier } from "app/form/form.modifier";
+import { FormModifier } from "./form.modifier";
 
 @Injectable()
 export class FormService {

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Field} from "app/form/form.model";
+import {Field} from "../../../form.model";
 
 @Component({
   selector: 'form-label',

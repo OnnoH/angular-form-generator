@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, ViewEncapsulation, SimpleChanges} from '@angular/core';
 import { AbstractControl } from "@angular/forms";
-import { Field } from "app/form/form.model";
-import { FormService } from "app/form/form.service";
+import { Field } from "../../../form.model";
+import { FormService } from "../../../form.service";
 import { Observable } from "rxjs/Observable";
 
 @Component({

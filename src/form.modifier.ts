@@ -1,6 +1,6 @@
-import { Field } from "app/form/form.model";
+import { Field } from "./form.model";
 import { AbstractControl, Validators } from "@angular/forms";
-import { maxValueValidator, minValueValidator, emptyValidator } from "app/form/custom-validators/validators";
+import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-validators/validators";
 import * as moment from "moment";
 import { Injectable } from "@angular/core";
 

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Group } from "app/form/form.model";
+import { Group } from "../form.model";
 
 @Pipe({
   name: 'groupCheck'
