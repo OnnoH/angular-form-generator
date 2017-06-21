@@ -1,4 +1,4 @@
-## Form Configuration
+# Form Configuration
 The form configuration is a json object that consists of required and optional parameters. 
 ```
 {
@@ -25,7 +25,7 @@ The form configuration is a json object that consists of required and optional p
 }
 ```
 
-### FormConfig
+## FormConfig
 The formConfig object is the root of a form configuration. It contains the genaral information of a formConfig.
 
 | Parameters | Type | Description |  |
@@ -36,7 +36,7 @@ The formConfig object is the root of a form configuration. It contains the genar
 | 'version' | string | The version of the formConfig | Optional |
 | 'pages' | Array Page | The pages of a formConfig. Each page will be its own form. This way it is possible to create a form over multiple pages that can be submitted together. A formConfig has to contain at least 1 page object | Required | 
 
-### Page
+## Page
 The page object is the main element of a form configuration. The page object contains the information of how a form has to be generated.
 
 | Parameters | Type | Description |  |
@@ -45,7 +45,7 @@ The page object is the main element of a form configuration. The page object con
 | 'hidden' | Array string | Possibility to tag a page which has to be hidden in some circumstances | Optional |
 | 'groups' | Array Group | A list of groups | Required |
 
-### Group
+## Group
 The group object is the element which contains the fields. It is also possible to set the orientation of the inner fields in the Group object.
 
 | Parameters | Type | Description |  |
@@ -56,21 +56,21 @@ The group object is the element which contains the fields. It is also possible t
 | 'fields' | Array Field | A list of fields | Required |
 | 'isHidden' | boolean | If the group should be hidden as default set to true | Optional |
 
-### Table
+## Table
 The table object contains Headers. The length of headers will represent the count of columns.
 
 | Parameters | Type | Description |  |
 |---|---|---|---|
 | 'headers' | Array Header | A list of table headers | Required |
 
-### Header
+## Header
 The header object will set the text which is set in the table header.
 
 | Parameters | Type | Description |  |
 |---|---|---|---|
 | 'text' | string | The header text. If you don't want to display a text set "" | Required |
 
-### Field
+## Field
 The field object is the object in which we can really create the form.
 
 | Parameters | Type | Description |  |
@@ -89,7 +89,7 @@ The field object is the object in which we can really create the form.
 | 'disable' | boolean | Sets if the field is disabled | Optional |
 | 'validators' | Array FormValidator | The validators of this field | Optional |
 
-### FieldOption
+## FieldOption
 The fieldOption object is a key value pair which is used to set the values of a dropdown or radiobutton list.
 
 | Parameters | Type | Description |  |
@@ -97,7 +97,7 @@ The fieldOption object is a key value pair which is used to set the values of a 
 | 'key' | string | The key of the pair | Required |
 | 'value' | string | The value of the pair | Optional |
 
-### FormValidator
+## FormValidator
 The validator of a field.
 
 | Parameters | Type | Description |  |
@@ -105,7 +105,7 @@ The validator of a field.
 | 'name' | string | The name of the validator | Required |
 | 'value' | string, number, boolean | The value which the validator has to use for the validation | Required |
 
-###  regOnChange
+##  regOnChange
 The regOnChange object is the object which takes care of the field's dependencie. It is for example possible to enable and disable the field if a chechbox is cheched or not.
 
 | Parameters | Type | Description |  |
@@ -113,7 +113,7 @@ The regOnChange object is the object which takes care of the field's dependencie
 | 'parent' | string | Name of the field this field is dependens on | Required |
 | 'callbacks' | Array Callback | A list of callbacks | Required |
 
-### Callback
+## Callback
 The callback object contains the method which has to be called when the parent field 
 satisfies the criteria.
 
@@ -123,7 +123,7 @@ satisfies the criteria.
 | 'param' | Array Param, string, boolean, number | The param parameter can contain alot of different types because it contains the value which the field should get when the parent field satisfies the criteria. If the method which have to be called is 'setValidator', the param can be of type Array Param | Required |
 | 'value' | string | Acceptance criteria | Required |
 
-### Param (from the Callback object)
+## Param (from the Callback object)
 The param object is only used when the callback method is 'setValidator'.
 
 | Parameters | Type | Description |  |
