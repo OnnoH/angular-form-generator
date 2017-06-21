@@ -19,6 +19,7 @@ import { FormPipesModule } from "./pipes/form-pipes.module";
 import { AutocompleteComponent } from './fields/field-types/autocomplete/autocomplete.component';
 import { FormModifier } from "./form.modifier";
 
+import 'HammerJS';
 
 @NgModule({
   imports: [
