@@ -8,7 +8,7 @@ import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-v
 import { GroupCheckPipe } from "./pipes/group-check.pipe";
 
 @Component({
-  selector: "ETP-form",
+  selector: "ngdg-form",
   templateUrl: "./form.component.html",
   styleUrls: ["./form.component.css", "./semantic.min.css"]
 })
@@ -99,7 +99,7 @@ export class FormComponent implements OnInit {
         control.setValue(this.getValue(this.data[this.currentGroup.kind][multi], field.fieldName.split('%multi_')[0]));
       }
       else{
-        control.setValue(this.getValue(this.data["answers"], field.fieldName));
+        control.setValue(this.getValue(this.data, field.fieldName));
       }
     }
   }
