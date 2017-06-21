@@ -10,7 +10,7 @@ import { GroupCheckPipe } from "./pipes/group-check.pipe";
 @Component({
   selector: "ETP-form",
   templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.css"]
+  styleUrls: ["./form.component.css", "./semantic.min.css"]
 })
 export class FormComponent implements OnInit {
   form: FormGroup;
