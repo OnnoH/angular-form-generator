@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AbstractControl, Validators } from "@angular/forms";
 import { Field } from "../../../form.model";
 import { FormService } from "../../../form.service";
+import "rxjs/Rx";
 
 @Component({
   selector: 'form-textfield',

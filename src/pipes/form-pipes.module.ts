@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GroupCheckPipe } from "app/form/pipes/group-check.pipe";
-import { TablerowGeneratorPipe } from "app/form/pipes/tablerow-generator.pipe";
-import { FormtypePipe } from "app/form/pipes/formtype.pipe";
+import { GroupCheckPipe } from "../pipes/group-check.pipe";
+import { TablerowGeneratorPipe } from "../pipes/tablerow-generator.pipe";
+import { FormtypePipe } from "../pipes/formtype.pipe";
 
 @NgModule({
   imports: [
