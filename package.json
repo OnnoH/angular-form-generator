@@ -9,6 +9,7 @@
   "author": "Dennis <dennis@semantica.nl> (https://www.semantica.nl)",
   "license": "ISC",
   "dependencies": {
+    "@angular/animations": "^4.2.3",
     "@angular/common": "^4.2.3",
     "@angular/core": "^4.2.3",
     "@angular/forms": "^4.2.3",
