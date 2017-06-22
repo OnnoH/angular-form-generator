@@ -1,5 +1,5 @@
 # Angular Form Generator
-![Version](https://img.shields.io/badge/Angular-4.x-lightgrey.svg) ![Version](https://img.shields.io/badge/npm-v1.1.0-orange.svg) ![Version](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![Version](https://img.shields.io/badge/Angular-4.x-lightgrey.svg) ![Version](https://img.shields.io/badge/npm-v1.1.1-orange.svg) ![Version](https://img.shields.io/badge/build-passing-brightgreen.svg)
 <br><br>A dynamic form generator for Angular with material design<br><br>
 ![Example](example.gif)
 
