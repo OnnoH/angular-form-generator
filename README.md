@@ -4,7 +4,6 @@
 ![Example](example.gif)
 
 ## Installation
-//TODO
 ```
 npm install @angular/material
 npm install angular-form-generator
