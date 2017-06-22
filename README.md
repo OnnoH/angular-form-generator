@@ -1,6 +1,7 @@
 # Angular Form Generator
 ![Version](https://img.shields.io/badge/Angular-4.x-lightgrey.svg) ![Version](https://img.shields.io/badge/npm-v0.0.0-orange.svg) ![Version](https://img.shields.io/badge/build-passing-brightgreen.svg)
-<br>A dynamic form generator for Angular with material design
+<br><br>A dynamic form generator for Angular with material design<br><br>
+![Example](example.gif)
 
 ## Installation
 //TODO
