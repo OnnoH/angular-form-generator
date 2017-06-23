@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MaterialModule, MdNativeDateModule } from "@angular/material";
+import { MaterialModule } from "@angular/material";
 
 import { TextfieldComponent } from './fields/field-types/textfield/textfield.component';
 import { FormService } from "./form.service";
@@ -29,8 +29,7 @@ import 'HammerJS';
     MaterialModule,
     ReactiveFormsModule,
     FormPipesModule,
-    NoopAnimationsModule,
-    MdNativeDateModule
+    NoopAnimationsModule
   ],
   declarations: [
     TextfieldComponent,

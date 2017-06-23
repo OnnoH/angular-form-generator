@@ -14,7 +14,7 @@ Import the FormGenerator Module and add it to the 'imports' of your module
 import { FormGeneratorModule } from 'angular-form-generator';
 
 @NgModule({
-  imports: [FormGeneratorModule],
+  imports: [FormGeneratorModule, MdNativeDateModule],
   ...
 })
 export YourModule { }
