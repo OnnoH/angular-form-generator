@@ -14,22 +14,10 @@ import { FormService } from "../../../form.service";
 export class DatepickerComponent implements OnInit {
   @Input() field: Field;
   @Input() control: AbstractControl;
-  date: Date;
-  readonly: boolean;
 
   constructor(private service: FormService) { }
 
-  ngOnInit() {
-    this.readonly = this.control.disabled;
-    if(this.control.value){
-      this.date = moment(this.control.value).toDate(); 
-    }
-    
-    this.control.valueChanges.distinctUntilChanged().subscribe(x => {
-      if(x){
-        this.date = moment(x).toDate();      
-      }
-    });    
+    ngOnInit() {
 
     if(this.field.validators && this.field.validators.length > 0){
       this.field.validators.forEach(validator => {
@@ -46,21 +34,12 @@ export class DatepickerComponent implements OnInit {
 
     this.service.registerFieldAndControl(this.field, this.control);
 
-    this.control.valueChanges.subscribe(res => {
-      this.readonly = this.control.disabled;
+    this.control.valueChanges.distinctUntilChanged().subscribe(res => {
+      console.log(this.control.value);
       if(res){
         this.service.modifyForm(this.field);
       }
-      else if(!res){
-        this.date = undefined;
-      }
     });
-  }
-
-  transformDate(date: any): void{
-    if(date){      
-      this.control.setValue(moment(date).format('YYYY-MM-DD'));
-    }
   }
 
   private setMinDate(value: string): void{
@@ -96,8 +75,6 @@ export class DatepickerComponent implements OnInit {
   }
 
   clearField(): void{        
-    this.date = undefined;
     this.control.setValue("");       
   }
-
 }

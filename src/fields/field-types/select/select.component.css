@@ -1,11 +1,11 @@
-.select-material-design .mat-select-trigger{
+/*.select-material-design .mat-select-trigger{
   font-size:14px;
   height:26px;
 }
 
 .select-material-design .mat-select-placeholder.mat-floating-placeholder{
   top:-14px!important;
-  /*overflow: visible;*/
+  /*overflow: visible;
   text-overflow: ellipsis;
 }
 
@@ -13,7 +13,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+}*/
 
 /*.select-material-design .mat-select-arrow{
     position: absolute;

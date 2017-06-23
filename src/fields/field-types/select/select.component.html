@@ -1,5 +1,5 @@
 <div *ngIf="field.visible" class="field">
-  <md-select placeholder="{{field.placeholder}}" (focus)="onFocus()" (blur)="onBlur()" [formControl]="control" [required]="field.isRequired" class="select-material-design" style="width: 100%; margin: 9px 0px;">
+  <md-select placeholder="{{field.placeholder}}" (focus)="onFocus()" (blur)="onBlur()" [formControl]="control" [required]="field.isRequired" class="select-material-design" style="width: 100%; margin: 14px 0px;">
     <md-option *ngFor="let option of options" [value]="option.key">
       {{option.value}}
     </md-option>

@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="ui negative message" *ngIf="formInvalid">
     <i class="close icon"></i>
     <div class="header">
@@ -7,7 +8,7 @@
 </div>
   <form [formGroup]="form" class="ui">
       <div class="ui stackable grid">
-          <ng-container *ngFor="let group of page.groups | groupCheck: data"><!--class="row"-->
+          <ng-container *ngFor="let group of page.groups | groupCheck: data">
             <ng-container *ngIf="!group.isHidden">
               <div *ngIf="group.title" class="sixteen wide column groupTitleRow">
                   <h3 class="groupTitle">{{group.title}}</h3>
