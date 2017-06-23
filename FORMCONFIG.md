@@ -76,7 +76,7 @@ The field object is the object in which we can really create the form.
 | Parameters | Type | Description |  |
 |---|---|---|---|
 | 'fieldName' | string | The name of the field | Required |
-| 'type' | string | The type of the field. Types that are possible: <br>- text <br>- date <br>- number <br>- submit <br>- button <br>- reset <br>- select <br>- check <br>- radio <br>- label <br>- autocomplete | Required |
+| 'type' | string | The type of the field. Types that are possible: <br>- text <br>- date <br>- number <br>- submit <br>- button <br>- reset <br>- select <br>- check <br>- radio <br>- label <br>- autocomplete <br>- textarea | Required |
 | 'placeholder' | string | The placeholder of the field | Optional |
 | 'options' | Array FieldOption | The options of a field. Only possible on field with type: select, radio and autocomplete | Optional |
 | 'lov' | string | The name of a lov (list of values). Only possible on field with type: select, radio and autocomplete | Optional |
