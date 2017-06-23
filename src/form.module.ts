@@ -21,6 +21,7 @@ import { FormModifier } from "./form.modifier";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 import 'HammerJS';
+import { TextareaComponent } from "./fields/field-types/textarea/textarea.component";
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import 'HammerJS';
     LabelComponent,
     FieldComponent,
     AutocompleteComponent,
+    TextareaComponent
   ],
   exports: [FormComponent],
   providers: [FormService, FormModifier]

@@ -1,6 +1,7 @@
 <div [ngSwitch]='field.type | formtype'>
   <div *ngSwitchCase="'textfield'"><form-textfield [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-textfield></div>
   <div *ngSwitchCase="'date'"><form-datepicker [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-datepicker></div>
+  <div *ngSwitchCase="'textarea'"><form-textarea [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-textarea></div>
   <div *ngSwitchCase="'radio'"><form-radiobutton [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-radiobutton></div>
   <div *ngSwitchCase="'select'"><form-select [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-select></div>
   <div *ngSwitchCase="'autocomplete'"><form-autocomplete [control]="form.controls[field.fieldName.split('.')[field.fieldName.split('.').length -1]]" [field]="field"></form-autocomplete></div>
