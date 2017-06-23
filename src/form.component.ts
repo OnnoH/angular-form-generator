@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@
 import { FormGroup, FormBuilder, FormControl, Validators, ValidatorFn } from "@angular/forms";
 
 import "rxjs/add/operator/map";
+import * as moment from 'moment';
 import { Page, Field, Group } from "./form.model";
 import { FormService } from "./form.service";
 import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-validators/validators";
@@ -99,7 +100,11 @@ export class FormComponent implements OnInit {
         control.setValue(this.getValue(this.data[this.currentGroup.kind][multi], field.fieldName.split('%multi_')[0]));
       }
       else{
-        control.setValue(this.getValue(this.data, field.fieldName));
+        let value = this.getValue(this.data, field.fieldName);
+        if(field.type === "date"){
+          value = moment(value).startOf('day').toDate();
+        }
+        control.setValue(value);
       }
     }
   }
