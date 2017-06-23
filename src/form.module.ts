@@ -22,6 +22,7 @@ import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 import 'HammerJS';
 import { TextareaComponent } from "./fields/field-types/textarea/textarea.component";
+import { FormValidatorService } from "./custom-validators/validator.service";
 
 @NgModule({
   imports: [
@@ -47,6 +48,6 @@ import { TextareaComponent } from "./fields/field-types/textarea/textarea.compon
     TextareaComponent
   ],
   exports: [FormComponent],
-  providers: [FormService, FormModifier]
+  providers: [FormService, FormModifier, FormValidatorService]
 })
 export class FormGeneratorModule { }

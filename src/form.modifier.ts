@@ -3,9 +3,11 @@ import { AbstractControl, Validators } from "@angular/forms";
 import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-validators/validators";
 import * as moment from "moment";
 import { Injectable } from "@angular/core";
+import { FormValidatorService } from "./custom-validators/validator.service";
 
 @Injectable()
 export class FormModifier {
+    constructor(private formValidatorService: FormValidatorService){}
     
     setVisibility(changedField: Field, changedControl: AbstractControl, fieldToChange: Field, controlToChange: AbstractControl, param: any, value: any){
         if(changedControl && changedControl.value){
@@ -86,31 +88,37 @@ export class FormModifier {
                 controlToChange.clearValidators();
                 let validators = [];
                 param.map(validator => {
-                    switch(validator.name){
-                        case "maxValue":
-                            return validators.push(maxValueValidator(+validator.value));
-                        case "minValue":
-                            return validators.push(minValueValidator(+validator.value));
-                        case "maxDate":
-                            if(validator.value){
-                                return this.setMaxDate(validator.value, fieldToChange);
-                            }
-                            return this.setMaxDate(changedControl.value, fieldToChange); 
-                        case "minDate":
-                            if(validator.value){
-                                return this.setMinDate(validator.value, fieldToChange);
-                            }
-                            return this.setMinDate(changedControl.value, fieldToChange);    
-                        case "required":
-                            fieldToChange.isRequired = validator.value;
-                            if(validator.value){
-                                return validators.push(Validators.required);
-                            }
-                            return;
-                        case "empty":
-                            return validators.push(emptyValidator(!!validator.value));
-                        default:
-                            return;
+                    let custVal = this.formValidatorService.getValidators();
+                    if(custVal[validator.name]){
+                        validators.push(custVal[validator.name](validator.value));
+                    }
+                    else{
+                        switch(validator.name){
+                            // case "maxValue":
+                            //     return validators.push(maxValueValidator(+validator.value));
+                            // case "minValue":
+                            //     return validators.push(minValueValidator(+validator.value));
+                            case "maxDate":
+                                if(validator.value){
+                                    return this.setMaxDate(validator.value, fieldToChange);
+                                }
+                                return this.setMaxDate(changedControl.value, fieldToChange); 
+                            case "minDate":
+                                if(validator.value){
+                                    return this.setMinDate(validator.value, fieldToChange);
+                                }
+                                return this.setMinDate(changedControl.value, fieldToChange);    
+                            case "required":
+                                fieldToChange.isRequired = validator.value;
+                                if(validator.value){
+                                    return validators.push(Validators.required);
+                                }
+                                return;
+                            // case "empty":
+                            //     return validators.push(emptyValidator(!!validator.value));
+                            default:
+                                return;
+                        }
                     }
                 });
                 controlToChange.setValidators(validators);         
@@ -142,6 +150,5 @@ export class FormModifier {
                 field.minDate = date;
             }
         }
-    }
-
+    }    
 }

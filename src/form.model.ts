@@ -1,4 +1,4 @@
-export class FormConfig{
+export class FormConfig{    
     pages: Page[];
     formId: string;
     form: string;

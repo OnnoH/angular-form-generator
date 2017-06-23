@@ -7,6 +7,7 @@ import { Page, Field, Group } from "./form.model";
 import { FormService } from "./form.service";
 import { maxValueValidator, minValueValidator, emptyValidator } from "./custom-validators/validators";
 import { GroupCheckPipe } from "./pipes/group-check.pipe";
+import { FormValidatorService } from "./custom-validators/validator.service";
 
 @Component({
   selector: "ngdg-form",
@@ -29,7 +30,7 @@ export class FormComponent implements OnInit {
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
   @Output() next: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder, private service: FormService, private groupCheck: GroupCheckPipe) { }
+  constructor(private formBuilder: FormBuilder, private service: FormService, private groupCheck: GroupCheckPipe, private validatorService: FormValidatorService) { }
 
   ngOnInit() {
     this.subscribeLov();
@@ -123,26 +124,23 @@ export class FormComponent implements OnInit {
     if(field && field.validators){
       let vals: ValidatorFn[] = [];
       field.validators.map(validator => {
-        switch(validator.name){
-          case "maxValue":
-            vals.push(maxValueValidator(+validator.value));
-            break;
-          case "minValue":
-            vals.push(minValueValidator(+validator.value));
-            break;
-          case "required":
-            field.isRequired = !!validator.value;
-            break;
-          case "empty":
-            vals.push(emptyValidator(!!validator.value));
-            break;
-          case "minDate":
-          case "maxDate":
-            this.setValDate(validator);
-            break;
-          default:
-            break;
+        let custVal = this.validatorService.getValidators();
+        if(custVal[validator.name]){
+          vals.push(custVal[validator.name](validator.value));
         }
+        else{
+          switch(validator.name){
+            case "required":
+              field.isRequired = !!validator.value;
+              break;
+            case "minDate":
+            case "maxDate":
+              this.setValDate(validator);
+              break;
+            default:
+              break;
+          }
+        }        
       });
 
       if(field.isRequired){
