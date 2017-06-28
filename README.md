@@ -1,5 +1,5 @@
 # Angular Form Generator
-![Version](https://img.shields.io/badge/Angular-4.x-lightgrey.svg) ![Version](https://img.shields.io/badge/npm-v1.1.3-orange.svg) ![Version](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![Version](https://img.shields.io/badge/Angular-4.x-lightgrey.svg) ![Version](https://img.shields.io/badge/npm-v1.1.4-orange.svg) ![Version](https://img.shields.io/badge/build-passing-brightgreen.svg)
 <br><br>A dynamic form generator for Angular with material design<br><br>
 ![Example](example.gif)
 
@@ -126,3 +126,98 @@ A compatible formConfig object:
   ]
 }
 ```
+
+## Modifiers, Validators and Custom validators
+
+For detailed information about the form configuration go to [formconfig documentation](FORMCONFIG.md)
+
+### Validators
+
+There are a few basic validators already included in the form generator. 
+1. required
+2. empty
+3. maxValue
+4. minValue
+
+#### Usage example
+```
+{
+  "fieldName": "Minutes",
+  "type": "number",
+  "validators": [
+    {
+      "name": "minValue",
+      "value": 1
+    },
+    {
+      "name": "maxValue",
+      "value": 59
+    }
+  ]
+}
+```
+
+### Modifiers
+
+There are a few form modifiers which can modify the state of a field.
+1. setValidators
+2. setEnabled
+3. setVisibility
+4. setValue
+5. setMaxDate
+6. setMinDate
+
+#### Usage example
+```
+{
+  "fieldName": "Date",
+  "type": "date",
+},
+{
+  "fieldName": "Information",
+  "type": "text",
+  "disable": true,
+  "regOnChange": {
+    "parent": "Date",
+    "callbacks": [
+      {
+        "method": "setEnabled",
+        "param": true
+      },
+      {
+        "method": "setValidator",
+        "param": [
+          {
+            "name": "required",
+            "value": true
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Custom validators
+
+There is also a possibility to make your own validators.<br>
+First you have to inject the FormValidatorService into you component.
+```
+import { FormValidatorService } from "angular-form-generator/src/custom-validators/validator.service";
+
+constructor(private formValidatorService: FormValidatorService){}
+```
+
+Now you can add custom validators to the form generator. The addValidator function takes two arguments.<br>
+First the name of the validator, second the validation function.
+```
+this.formValidatorService.addValidator("validator", (max:number) => {
+  return (control: AbstractControl) => {
+      var num = +control.value;
+      if(control.value != "" && num > max){
+          return { maxValueError: "Value must be lower than " + max};
+      }
+  };
+});
+```
+
